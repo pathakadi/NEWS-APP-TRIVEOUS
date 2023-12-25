@@ -7,7 +7,7 @@ const NewsList = ({query}) => {
     useEffect(() => {
         const getArticles = async () => {
             const response = await axios.get(`https://newsapi.org/v2/everything?q=${query||"india"}&apiKey=42d11987943442128b56cdf91d2fc009`)
-            setArticles(response.data.articles)
+            setArticles(response?.data?.articles)
             console.log(response)
         }
         getArticles()
